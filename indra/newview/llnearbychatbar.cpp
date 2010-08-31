@@ -47,6 +47,8 @@
 #include "llviewerwindow.h"
 #include "llrootview.h"
 
+#include "textutils.h"
+
 S32 LLNearbyChatBar::sLastSpecialChatChannel = 0;
 
 // legacy callback glue
@@ -597,30 +599,6 @@ EChatType LLNearbyChatBar::processChatTypeTriggers(EChatType type, std::string &
 	}
 
 	return type;
-}
-
-static void AutoCloseOOC(std::string &utf8text)
-{
-	LL_WARNS("AutoOOC") << "AutoCloseOOC(" << utf8text << ")" << LL_ENDL;
-	if (gSavedSettings.getBOOL("AutoCloseOOC"))
-	{
-		LL_WARNS("AutoOOC") << "AutoCloseOOC(" << utf8text << "): on"
-			<< LL_ENDL;
-		if (utf8text.find("((") != std::string::npos && utf8text.find("))") == std::string::npos )
-		{
-			if(')' == utf8text[utf8text.length() - 1])
-			{
-				utf8text += " ))";
-			}
-			else
-			{
-				utf8text += "))";
-			}
-		}
-		LL_WARNS("AutoOOC") << "AutoCloseOOC(" << utf8text << "): after"
-			<< LL_ENDL;
-
-	}
 }
 
 
