@@ -772,6 +772,27 @@ void LLFloaterIMPanel::onVisibilityChange(const LLSD& new_visibility)
 	}
 }
 
+// XXX Move to a common place to the code in indra/newview/llchatbar.cpp
+//     Using mInputEditor->getConvertedText(); maybe?
+static void AutoCloseOOC(std::string &utf8text)
+{
+	if (gSavedSettings.getBOOL("AutoCloseOOC"))
+	{
+		if (utf8text.find("((") != std::string::npos && utf8text.find("))") == std::string::npos )
+		{
+			if(')' == utf8text[utf8text.length() - 1])
+			{
+				utf8text += " ))";
+			}
+			else
+			{
+				utf8text += "))";
+			}
+		}
+
+	}
+}
+
 void LLFloaterIMPanel::sendMsg()
 {
 	if (!gAgent.isGodlike() 
@@ -792,6 +813,7 @@ void LLFloaterIMPanel::sendMsg()
 			// Truncate and convert to UTF8 for transport
 			std::string utf8_text = wstring_to_utf8str(text);
 			utf8_text = utf8str_truncate(utf8_text, MAX_MSG_BUF_SIZE - 1);
+			AutoCloseOOC(utf8text);
 			
 			if ( mSessionInitialized )
 			{

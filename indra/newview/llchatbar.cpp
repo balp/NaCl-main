@@ -350,6 +350,29 @@ LLWString LLChatBar::stripChannelNumber(const LLWString &mesg, S32* channel)
 	}
 }
 
+static void AutoCloseOOC(std::string &utf8text)
+{
+	LL_WARNS("AutoOOC") << "AutoCloseOOC(" << utf8text << ")" << LL_ENDL;
+	if (gSavedSettings.getBOOL("AutoCloseOOC"))
+	{
+		LL_WARNS("AutoOOC") << "AutoCloseOOC(" << utf8text << "): on"
+			<< LL_ENDL;
+		if (utf8text.find("((") != std::string::npos && utf8text.find("))") == std::string::npos )
+		{
+			if(')' == utf8text[utf8text.length() - 1])
+			{
+				utf8text += " ))";
+			}
+			else
+			{
+				utf8text += "))";
+			}
+		}
+		LL_WARNS("AutoOOC") << "AutoCloseOOC(" << utf8text << "): after"
+			<< LL_ENDL;
+
+	}
+}
 
 void LLChatBar::sendChat( EChatType type )
 {
@@ -369,6 +392,7 @@ void LLChatBar::sendChat( EChatType type )
 			std::string utf8_revised_text;
 			if (0 == channel)
 			{
+				AutoCloseOOC(utf8text);
 				// discard returned "found" boolean
 				LLGestureMgr::instance().triggerAndReviseString(utf8text, &utf8_revised_text);
 			}
