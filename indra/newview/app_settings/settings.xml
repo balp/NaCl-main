@@ -352,7 +352,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <integer>((</integer>
+      <string>((</string>
     </map>
     <key>OOCCloseString</key>
     <map>
@@ -363,7 +363,7 @@
       <key>Type</key>
       <string>String</string>
       <key>Value</key>
-      <integer>))</integer>
+      <string>))</string>
     </map>
     <key>AutoLeveling</key>
     <map>
