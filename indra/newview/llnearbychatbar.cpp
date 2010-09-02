@@ -47,7 +47,7 @@
 #include "llviewerwindow.h"
 #include "llrootview.h"
 
-#include "balptextutils.h"
+#include "_nacl_textutils.h"
 
 S32 LLNearbyChatBar::sLastSpecialChatChannel = 0;
 

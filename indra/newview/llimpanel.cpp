@@ -76,7 +76,7 @@
 #include "llmutelist.h"
 #include "llstylemap.h"
 #include "llappviewer.h"
-#include "balptextutils.h"
+#include "_nacl_textutils.h"
 
 //
 // Constants

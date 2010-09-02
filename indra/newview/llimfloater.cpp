@@ -56,7 +56,7 @@
 #include "llspeakers.h"
 #include "llsidetray.h"
 
-#include "balptextutils.h"
+#include "_nacl_textutils.h"
 
 static const S32 RECT_PADDING_NOT_INIT = -1;
 static const S32 RECT_PADDING_NEED_RECALC = -2;
