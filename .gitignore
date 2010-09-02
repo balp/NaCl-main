@@ -1,10 +1,14 @@
-LICENSES/
-SNOW-606-disable-libuuid.patch
+/.kdev*/
+*.kdev4
+/LICENSES/
 *.pyc
 indra/llwindow/glh/
 indra/newview/vivox-runtime/
-indra/viewer-linux-i686-relwithdebinfo/
+indra/viewer-linux-*/
+/installed.xml
+/libraries/
+*.rej
 *.orig
-installed.xml
-libraries/
+*~
+*.patch
 
