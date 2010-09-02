@@ -370,6 +370,7 @@ void LLChatBar::sendChat( EChatType type )
 			if (0 == channel)
 			{
 				AutoCloseOOC(utf8text);
+				ExpandMUPose(utf8text);
 				// discard returned "found" boolean
 				LLGestureMgr::instance().triggerAndReviseString(utf8text, &utf8_revised_text);
 			}

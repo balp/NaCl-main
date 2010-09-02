@@ -3,3 +3,5 @@
 
 
 void AutoCloseOOC(std::string &utf8text);
+void ExpandMUPose(std::string &utf8text);
+

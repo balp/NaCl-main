@@ -211,6 +211,7 @@ void LLIMFloater::sendMsg()
 			std::string utf8_text = wstring_to_utf8str(text);
 			utf8_text = utf8str_truncate(utf8_text, MAX_MSG_BUF_SIZE - 1);
 			AutoCloseOOC(utf8_text);
+			ExpandMUPose(utf8_text);
 			
 			if (mSessionInitialized)
 			{
