@@ -343,6 +343,28 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
+    <key>OOCOpenString</key>
+    <map>
+      <key>Comment</key>
+      <string>Start of the OOC auto close comment.</string>
+      <key>Persist</key>
+      <integer>1</integer>
+      <key>Type</key>
+      <string>String</string>
+      <key>Value</key>
+      <integer>((</integer>
+    </map>
+    <key>OOCCloseString</key>
+    <map>
+      <key>Comment</key>
+      <string>End of the OOC auto close comment.</string>
+      <key>Persist</key>
+      <integer>1</integer>
+      <key>Type</key>
+      <string>String</string>
+      <key>Value</key>
+      <integer>))</integer>
+    </map>
     <key>AutoLeveling</key>
     <map>
       <key>Comment</key>

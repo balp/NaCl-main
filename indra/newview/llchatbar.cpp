@@ -61,7 +61,7 @@
 #include "llviewermenu.h"
 #include "lluictrlfactory.h"
 #include "llbottomtray.h"
-#include "textutils.h"
+#include "balptextutils.h"
 
 //
 // Globals
