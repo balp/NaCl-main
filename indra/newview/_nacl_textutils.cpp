@@ -10,7 +10,7 @@ void AutoCloseOOC(std::string &utf8text)
 {
 	std::string OOCOpen = gSavedSettings.getString("_nacl_OOCOpenString");
 	std::string OOCClose = gSavedSettings.getString("_nacl_OOCCloseString");
-	LL_DEBUGS("BalpText") << "AutoCloseOOC(" << utf8text << ")" << LL_ENDL;
+	LL_DEBUGS("_nacl_Chat") << "AutoCloseOOC(" << utf8text << ")" << LL_ENDL;
 	if (gSavedSettings.getBOOL("_nacl_AutoCloseOOC"))
 	{
 		if (utf8text.find(OOCOpen) != std::string::npos && utf8text.find(OOCClose) == std::string::npos )
@@ -24,7 +24,7 @@ void AutoCloseOOC(std::string &utf8text)
 				utf8text += " " + OOCClose;
 			}
 		}
-		LL_DEBUGS("BalpText") << "AutoCloseOOC(" << utf8text << "): after"
+		LL_DEBUGS("_nacl_Chat") << "AutoCloseOOC(" << utf8text << "): after"
 			<< LL_ENDL;
 
 	}
@@ -32,7 +32,7 @@ void AutoCloseOOC(std::string &utf8text)
 
 void ExpandMUPose(std::string &utf8text)
 {
-	LL_DEBUGS("BalpText") << "ExpandMUPose(" << utf8text << ")" << LL_ENDL;
+	LL_DEBUGS("_nacl_Chat") << "ExpandMUPose(" << utf8text << ")" << LL_ENDL;
 	if (gSavedSettings.getBOOL("_nacl_ExpandMUPose"))
 	{
 		if(0 == utf8text.compare(0,2,":'")) {
@@ -40,6 +40,6 @@ void ExpandMUPose(std::string &utf8text)
 		} else if(0 == utf8text.compare(0,2,": ")) {
 			utf8text.replace(0,1,"/me");
 		}
-		LL_DEBUGS("BalpText") << "ExpandMUPose: to " << utf8text << LL_ENDL;
+		LL_DEBUGS("_nacl_Chat") << "ExpandMUPose: to " << utf8text << LL_ENDL;
 	}
 }
