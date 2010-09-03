@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <llsd>
 <map>
-    <key>_NaCL_AutoCloseOOC</key>
+    <key>_nacl_AutoCloseOOC</key>
     <map>
       <key>Comment</key>
       <string>Auto close OOC comments, (i.e. add \"))\" on lines with \"((\")</string>
@@ -12,7 +12,7 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
-    <key>_NaCL_ExpandMUPose</key>
+    <key>_nacl_ExpandMUPose</key>
     <map>
       <key>Comment</key>
       <string>Expand MU* style poses like : waves to /me waves.</string>
@@ -23,7 +23,7 @@
       <key>Value</key>
       <integer>0</integer>
     </map>
-    <key>_NaCL_OOCOpenString</key>
+    <key>_nacl_OOCOpenString</key>
     <map>
       <key>Comment</key>
       <string>Start of the OOC auto close comment.</string>
@@ -34,7 +34,7 @@
       <key>Value</key>
       <string>((</string>
     </map>
-    <key>_NaCL_OOCCloseString</key>
+    <key>_nacl_OOCCloseString</key>
     <map>
       <key>Comment</key>
       <string>End of the OOC auto close comment.</string>
